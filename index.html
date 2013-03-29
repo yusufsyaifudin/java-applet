@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<title>Java Applet</title>
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<h2>Memanggil JavaApplet dengan JavaScript dan sebaliknya</h2>
+		<h3 class="subheader">Dibuat oleh: Yusuf Syaifudin &raquo; 11/313303/PA/13672</h3>
+		<h3 class="subheader"></h3>
+		<fieldset>
+			<legend>JavaApplet yang dipanggil dengan JavaScript</legend>
+			<div id="applet_wraper"></div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Forms HTML untuk memanggil JavaApplet</legend>
+			<form name="form" action="applet.html">
+				<label for="value1">Username Twitter Anda</label>
+				<input type="text" id="value1" name="val1">
+				<!-- <input type="text" name="out0"> -->
+				<input type="button" value="Submit!" onClick="pass();" class="button">
+			</form>
+		</fieldset>
+
+		<fieldset>
+			<legend>JavaScript yang dipanggil dengan JavaApplet</legend>
+			<h6 class="subheader">Maksimal 150 Request per jam (ketentuan API Public Twitter)</h6>
+			<div id="tweet"></div>
+		</fieldset>
+
+		<diy class="right">Ditest dengan Google Chrome</diy>
+	</div>
+
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/javascript.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			javascript.init();
+		});
+	</script>
+
+	<script type="text/javascript">
+	function pass()
+	{
+		document.applet_guest.put(document.form.val1.value);
+		//document.guest.out0.value = document.applet_guest.get();
+	}
+	</script>
+
+</body>
+</html>
